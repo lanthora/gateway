@@ -18,12 +18,3 @@ services:
     volumes:
       - /sys:/sys
       - ./config/dae:/etc/dae
-  watchtower:
-    image: containrrr/watchtower
-    container_name: "watchtower"
-    network_mode: "host"
-    privileged: true
-    restart: always
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    command: candy dae watchtower --cleanup --log-level warn
